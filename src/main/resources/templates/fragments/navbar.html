@@ -1,0 +1,21 @@
+    <nav layout:fragment="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a th:href="@{/}" class="navbar-brand">Login/register demo app</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a th:href="@{/}" class="nav-item nav-link active">Home</a>
+                    <a href="#" class="nav-item nav-link">Forum</a>
+                    <a sec:authorize="hasAuthority('ADMIN')" href="#" class="nav-item nav-link" tabindex="-1">Admin</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a sec:authorize="!isAuthenticated" th:href="@{/login}" class="nav-item nav-link">Login</a>
+                    <a sec:authorize="isAuthenticated" th:href="@{/logout}" class="nav-item nav-link">Logout</a>                   
+                    <a th:href="@{/register}" class="nav-item nav-link">Register</a>
+                    <a href="#" class="nav-item nav-link">Profile</a>                    
+                </div>
+            </div>
+        </div>
+    </nav>
