@@ -16,7 +16,8 @@
 	<description>Demo project using Spring Boot Security to demonstrate user login/registration</description>
 	<properties>
 		<java.version>11</java.version>
-		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<dependencies>
 		<dependency>

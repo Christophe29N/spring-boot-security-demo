@@ -4,6 +4,7 @@ package com.example.demo.registration;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,7 @@ public class UserRepositoryTests {
         user.setLastName("sinclar");
         user.setPassword("ibiza");
         user.setTimeZone("Spain");
+        user.setUuid(UUID.randomUUID());
         
         User savesUser = repo.save(user);
         
@@ -55,6 +57,7 @@ public class UserRepositoryTests {
         newUser.setLastName("guetta");
         newUser.setPassword("ibiza");
         newUser.setTimeZone("Spain");
+        newUser.setUuid(UUID.randomUUID());
         
         User savedNewUser = repo.save(newUser);
 
