@@ -11,7 +11,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "role", uniqueConstraints = @UniqueConstraint(columnNames = "name "))
 public class Role {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	public Role() {

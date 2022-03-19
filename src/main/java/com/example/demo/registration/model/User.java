@@ -3,6 +3,7 @@ package com.example.demo.registration.model;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,9 +18,12 @@ import javax.persistence.ManyToMany;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-
+	
+	@Column(updatable = false, nullable = false)
+	private UUID uuid;
+	
     @Column(nullable = false, length = 32)
 	private String firstName;
 
@@ -56,6 +60,7 @@ public class User {
 
 	public User(String firstName, String lastName, String emailAddress, String password) {
 		super();
+		this.uuid=UUID.randomUUID();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailAddress = emailAddress;
@@ -80,7 +85,23 @@ public class User {
 		this.id = id;
 	}
 
-	public String getFirstName() {
+	public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public LocalDateTime getLastEmailConfirmation() {
+        return lastEmailConfirmation;
+    }
+
+    public void setLastEmailConfirmation(LocalDateTime lastEmailConfirmation) {
+        this.lastEmailConfirmation = lastEmailConfirmation;
+    }
+
+    public String getFirstName() {
 		return firstName;
 	}
 

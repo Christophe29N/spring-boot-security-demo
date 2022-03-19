@@ -34,6 +34,11 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
@@ -44,7 +49,6 @@
             <groupId>nz.net.ultraq.thymeleaf</groupId>
             <artifactId>thymeleaf-layout-dialect</artifactId>
         </dependency>
-
         <dependency> <!-- allow to reference the WebJars assets without using the version, for example /webjars/bootstrap/css/bootstrap.min.css instead of /webjars/bootstrap/5.1.3/css/bootstrap.min.css-->
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator-core</artifactId>
