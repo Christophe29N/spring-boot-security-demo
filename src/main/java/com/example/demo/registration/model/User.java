@@ -12,9 +12,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
 //@Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "emailAddress"))
+//Table named 'user' on postgreSQL is not a good idea
+@Table(name = "person")
 public class User {
 
 	@Id
